@@ -59,7 +59,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\MazeController.cs" />
-<<<<<<< HEAD
+    <Compile Include="Assets\Trigger.cs" />
+    <Compile Include="Assets\BallController.cs" />
+    <Compile Include="Assets\GameManager.cs" />
     <Compile Include="Assets\Scripts\HUD.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -84,11 +86,6 @@
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
-=======
-    <Compile Include="Assets\Trigger.cs" />
-    <Compile Include="Assets\BallController.cs" />
-    <Compile Include="Assets\GameManager.cs" />
->>>>>>> 18f3ac3034d7ecd36416fd6671c9fb03d236c989
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
