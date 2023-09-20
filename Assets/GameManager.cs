@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] private Vector3 spawnPosition;
+    [SerializeField] private float killHeight;
+
     private GameObject ballResource;
     private GameObject HUDResource;
 
@@ -15,10 +18,7 @@ public class GameManager : MonoBehaviour
 
     private HUD HUDScript;
 
-
-    [SerializeField] private Vector3 spawnPosition;
-    [SerializeField] private float killHeight;
-
+    private bool gameOver = false;
 
     private uint currentLives = 3;
 
@@ -31,7 +31,14 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        
+        if (gameOver)
+        {
+            //Check input for reset 
+            return;
+        }
+
+        CheckKillBounds();
+
     }
 
     private void LoadResources()
@@ -39,7 +46,6 @@ public class GameManager : MonoBehaviour
         ballResource = Resources.Load<GameObject>("Ball");
         HUDResource = Resources.Load<GameObject>("HUD");
     }
-
     private void CreateObjects()
     {
         ballObject = Instantiate(ballResource);
@@ -49,14 +55,20 @@ public class GameManager : MonoBehaviour
         ballController.SetGameManager(this);
     }
 
-    private void KillPlayer()
+
+    private void CheckKillBounds()
     {
         if (ballObject.transform.position.y <= killHeight)
         {
-            ballObject.transform.position = spawnPosition;
-            currentLives--;
-            HUDScript.SetLives(currentLives);
-            //If game is over!
+            KillPlayer();
+            if (currentLives == 0)
+                gameOver = true;
         }
+    }
+    private void KillPlayer()
+    {
+        ballObject.transform.position = spawnPosition;
+        currentLives--;
+        HUDScript.SetLives(currentLives);
     }
 }
