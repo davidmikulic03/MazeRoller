@@ -7,6 +7,9 @@ public class BallController : MonoBehaviour
 {
     private GameManager gameManager;
 
+
+
+
     public void SetGameManager(GameManager gameManager)
     {
         this.gameManager = gameManager;
