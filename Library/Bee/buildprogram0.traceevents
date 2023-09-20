@@ -2,6 +2,20 @@
 { "pid": 35942, "tid": -1, "ph": "M", "name": "process_sort_index", "args": { "sort_index": "-1" } },
 { "pid": 35942, "tid": 1, "ph": "M", "name": "thread_name", "args": { "name": "" } },
 <<<<<<< HEAD
+{ "pid": 35942, "tid": 1, "ts": 1695209501754841, "dur": 520468, "ph": "X", "name": "BuildProgram", "args": {} },
+{ "pid": 35942, "tid": 1, "ts": 1695209501755532, "dur": 26731, "ph": "X", "name": "BuildProgramContextConstructor", "args": {} },
+{ "pid": 35942, "tid": 1, "ts": 1695209501786822, "dur": 472661, "ph": "X", "name": "RunBuildProgram", "args": {} },
+{ "pid": 35942, "tid": 1, "ts": 1695209501787063, "dur": 459887, "ph": "X", "name": "PlayerBuildProgramBase.SetupPlayerBuild", "args": {} },
+{ "pid": 35942, "tid": 1, "ts": 1695209501787472, "dur": 17101, "ph": "X", "name": "SetupDataFiles", "args": {} },
+{ "pid": 35942, "tid": 1, "ts": 1695209501804863, "dur": 494, "ph": "X", "name": "SetupCopyPlugins", "args": {} },
+{ "pid": 35942, "tid": 1, "ts": 1695209501981669, "dur": 2510, "ph": "X", "name": "SetupUnityLinker", "args": {} },
+{ "pid": 35942, "tid": 1, "ts": 1695209502264537, "dur": 1251, "ph": "X", "name": "OutputData.Write", "args": {} },
+{ "pid": 35942, "tid": 1, "ts": 1695209502265790, "dur": 9516, "ph": "X", "name": "Backend.Write", "args": {} },
+{ "pid": 35942, "tid": 1, "ts": 1695209502266471, "dur": 8420, "ph": "X", "name": "JsonToString", "args": {} },
+{ "pid": 35942, "tid": 1, "ts": 1695209502279486, "dur": 890, "ph": "X", "name": "", "args": {} },
+{ "pid": 35942, "tid": 1, "ts": 1695209502279210, "dur": 1307, "ph": "X", "name": "Write chrome-trace events", "args": {} },
+=======
+<<<<<<< HEAD
 { "pid": 35942, "tid": 1, "ts": 1695207188522835, "dur": 131349, "ph": "X", "name": "BuildProgram", "args": {} },
 { "pid": 35942, "tid": 1, "ts": 1695207188523554, "dur": 33879, "ph": "X", "name": "BuildProgramContextConstructor", "args": {} },
 { "pid": 35942, "tid": 1, "ts": 1695207188633223, "dur": 2704, "ph": "X", "name": "OutputData.Write", "args": {} },
@@ -28,3 +42,4 @@
 { "pid": 35942, "tid": 1, "ts": 1695202866036453, "dur": 1281, "ph": "X", "name": "Write chrome-trace events", "args": {} },
 >>>>>>> 2f0dcd09f8a5d6b6c43df3540fc26894078c8145
 >>>>>>> cff988cee513b47c682fa14fc0999bd18bcb9298
+>>>>>>> ec8140315fbff7b200df66678ecfe57f72b0c848
