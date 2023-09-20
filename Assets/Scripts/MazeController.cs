@@ -9,21 +9,15 @@ public class MazeController : MonoBehaviour
     [SerializeField] private InputAction inputY;
     [SerializeField] private float tiltSpeed;
 
-<<<<<<< HEAD
     private Transform spawnPoint;
 
-=======
->>>>>>> 382305fa1e79a33d6f053c94031e237af98a58e2
 
     void Awake()
     {
         inputX.Enable();
         inputY.Enable();
-<<<<<<< HEAD
 
         spawnPoint = transform.Find("SpawnPoint");
-=======
->>>>>>> 382305fa1e79a33d6f053c94031e237af98a58e2
     }
 
     // Update is called once per frame
@@ -33,32 +27,26 @@ public class MazeController : MonoBehaviour
         {
             float xValue = inputX.ReadValue<float>();
             float yValue = inputY.ReadValue<float>();
-            //Debug.Log(new Vector2(xValue, yValue));
 
-            Vector3 currentRotation = transform.rotation.eulerAngles;
-            //Debug.Log(currentRotation + " old");
+            Vector3 currentRotation = transform.localRotation.eulerAngles;
 
             xValue *= Time.deltaTime * tiltSpeed;
             yValue *= Time.deltaTime * tiltSpeed;
 
+            
             float newRotationX = -yValue * Mathf.Cos(transform.rotation.eulerAngles.y * Mathf.Deg2Rad);
             float newRotationZ = -yValue * Mathf.Sin(transform.rotation.eulerAngles.y * Mathf.Deg2Rad);
 
-            Vector3 newRotation = currentRotation + new Vector3(
+            /*Vector3 newRotation = currentRotation + new Vector3(
                 newRotationX, 
-                xValue, 
+                -xValue, 
                 newRotationZ);
-            
-            /*if (newRotation.x > 90.0f)
-                newRotation.x = 90.0f;
-            else if (newRotation.x < -90.0f)
-                newRotation.x = -90.0f;*/
 
-            //newRotation = new Vector3(newRotation.x, Mathf.Clamp(newRotation.y, -90f, 90f), 0f);
-            //Debug.Log(newRotation + " new");
-            transform.rotation = Quaternion.Euler(newRotation);
+            transform.rotation = Quaternion.Euler(newRotation);*/
+            
+
+            transform.localRotation = Quaternion.Euler(new Vector3(currentRotation.x - yValue, currentRotation.y, currentRotation.z + xValue));
         }
-<<<<<<< HEAD
     }
 
     public void ResetState()
@@ -68,7 +56,5 @@ public class MazeController : MonoBehaviour
     public Vector3 GetSpawnPoint()
     {
         return spawnPoint.position;
-=======
->>>>>>> 382305fa1e79a33d6f053c94031e237af98a58e2
     }
 }

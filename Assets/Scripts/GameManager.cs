@@ -88,6 +88,8 @@ public class GameManager : MonoBehaviour
         running = true;
         ballObject.transform.position = mazeController.GetSpawnPoint();
         ballObject.SetActive(true);
+        currentLives = 3;
+        currentScore = 0;
     }
 
 
