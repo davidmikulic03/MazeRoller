@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class MazeController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] InputAction inputX;
+    [SerializeField] InputAction inputY;
+
+    void Awake()
     {
         
     }
