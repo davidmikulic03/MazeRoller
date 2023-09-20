@@ -60,8 +60,19 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\BallController.cs" />
     <Compile Include="Assets\Scripts\MazeController.cs" />
+<<<<<<< HEAD
     <Compile Include="Assets\Scripts\Trigger.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
+=======
+<<<<<<< HEAD
+    <Compile Include="Assets\Scripts\Trigger.cs" />
+    <Compile Include="Assets\Scripts\GameManager.cs" />
+=======
+    <Compile Include="Assets\Trigger.cs" />
+    <Compile Include="Assets\BallController.cs" />
+    <Compile Include="Assets\GameManager.cs" />
+>>>>>>> 2f0dcd09f8a5d6b6c43df3540fc26894078c8145
+>>>>>>> cff988cee513b47c682fa14fc0999bd18bcb9298
     <Compile Include="Assets\Scripts\HUD.cs" />
   </ItemGroup>
   <ItemGroup>
