@@ -9,11 +9,15 @@ public class MazeController : MonoBehaviour
     [SerializeField] private InputAction inputY;
     [SerializeField] private float tiltSpeed;
 
+    private Transform spawnPoint;
+
 
     void Awake()
     {
         inputX.Enable();
         inputY.Enable();
+
+        spawnPoint = transform.Find("SpawnPoint");
     }
 
     // Update is called once per frame
@@ -48,5 +52,14 @@ public class MazeController : MonoBehaviour
             //Debug.Log(newRotation + " new");
             transform.rotation = Quaternion.Euler(newRotation);
         }
+    }
+
+    public void ResetState()
+    {
+        transform.rotation = Quaternion.Euler(Vector3.zero);
+    }
+    public Vector3 GetSpawnPoint()
+    {
+        return spawnPoint.position;
     }
 }

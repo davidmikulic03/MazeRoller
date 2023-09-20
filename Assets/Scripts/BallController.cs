@@ -17,6 +17,11 @@ public class BallController : MonoBehaviour
 
     private void OnTriggerEnter(Collider collider)
     {
-        
+        Trigger trigger = collider.GetComponent<Trigger>();
+        if (trigger)
+        {
+            gameManager.AddScore(trigger.Points);
+            gameManager.KillPlayer();
+        }
     }
 }

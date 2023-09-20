@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Trigger : MonoBehaviour
 {
-    [SerializeField] int points;
-    public int Points { get { return points; } }
+    [SerializeField] uint points;
+    public uint Points { get { return points; } }
 
-    public Trigger(int points)
+    public Trigger(uint points)
     {
         this.points = points;
     }

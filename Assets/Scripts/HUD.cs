@@ -19,11 +19,6 @@ public class HUD : MonoBehaviour
     private void Awake()
     {
         SetupReferences();
-        SetScore(24);
-        SetLives(0);
-        SetLives(1);
-        SetLives(2);
-        SetLives(3);
     }
     private void SetupReferences()
     {
