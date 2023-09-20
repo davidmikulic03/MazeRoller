@@ -416,6 +416,7 @@ MonoBehaviour:
       m_Action: Input Y
       m_Flags: 0
     m_Flags: 0
+  tiltSpeed: 20
 --- !u!1001 &3781050698703299532
 PrefabInstance:
   m_ObjectHideFlags: 0
