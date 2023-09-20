@@ -1,44 +1,43 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private Vector3 spawnPosition;
     [SerializeField] private float killHeight;
+    [SerializeField] private InputAction resetInput;
 
     private GameObject ballResource;
     private GameObject HUDResource;
-
-
-
 
     private GameObject ballObject;
     private GameObject HUDObject;
 
     private HUD HUDScript;
 
-    private bool gameOver = false;
+
+    private bool running = true;
 
     private uint currentLives = 3;
-
+    private uint currentScore = 0;
 
     void Awake()
     {
         LoadResources();
         CreateObjects();
+        resetInput.Enable();
     }
 
     void Update()
     {
-        if (gameOver)
+        if (!running)
         {
-            //Check input for reset 
+            CheckInput();
             return;
         }
 
         CheckKillBounds();
-
+        //UpdatePlayer
     }
 
     private void LoadResources()
@@ -56,19 +55,42 @@ public class GameManager : MonoBehaviour
     }
 
 
+    private void CheckInput()
+    {
+        if (resetInput.triggered)
+            ResetGameState();
+    }
     private void CheckKillBounds()
     {
         if (ballObject.transform.position.y <= killHeight)
         {
             KillPlayer();
             if (currentLives == 0)
-                gameOver = true;
+            {
+                ballObject.SetActive(false);
+                running = false;
+            }
         }
+
     }
-    private void KillPlayer()
+    private void ResetGameState()
+    {
+        running = true;
+        ballObject.transform.position = spawnPosition;
+        ballObject.SetActive(true);
+    }
+
+
+
+    public void KillPlayer()
     {
         ballObject.transform.position = spawnPosition;
         currentLives--;
         HUDScript.SetLives(currentLives);
+    }
+    public void AddScore(uint score)
+    {
+        currentScore += score;
+        HUDScript.SetScore(currentScore);
     }
 }
